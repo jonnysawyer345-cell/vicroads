@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Vehicles</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #f2f4f7;
+      color: #111;
+    }
+
+    .app {
+      width: 390px;
+      height: 100vh;
+      margin: 0 auto;
+      background: #f2f4f7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* HEADER */
+    .top-header {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .top-header .title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* LIST */
+    .list {
+      padding: 16px;
+    }
+
+    .list-item {
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    .list-text h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .list-text p {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .external {
+      width: 18px;
+      height: 18px;
+      opacity: 0.6;
+    }
+
+    .list-item:active {
+      background: #f9fafb;
+    }
+
+    /* BOTTOM NAV (same as home) */
+    .nav {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 80px;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #666;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .nav a.active {
+      color: #111;
+      font-weight: 600;
+    }
+
+    .nav-icon {
+      width: 26px;
+      height: 26px;
+      display: block;
+      margin: 0 auto 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+
+    <header class="top-header">
+      <div class="title">Vehicles</div>
+    </header>
+
+    <div class="list">
+
+      <a href="vehicles.html" class="list-item">
+        <div class="list-text">
+          <h3>My registered vehicles</h3>
+          <p>View all registered vehicles</p>
+        </div>
+        <img src="tic.png" class="external">
+      </a>
+
+      <a href="#" class="list-item">
+        <div class="list-text">
+          <h3>Manage registration renewal</h3>
+          <p>Renew your registration when it's due</p>
+        </div>
+        <img src="tic.png" class="external">
+      </a>
+
+      <a href="#" class="list-item">
+        <div class="list-text">
+          <h3>Change your garage address</h3>
+        </div>
+        <img src="tic.png" class="external">
+      </a>
+
+      <a href="#" class="list-item">
+        <div class="list-text">
+          <h3>Apprentice registration discount</h3>
+        </div>
+        <img src="tic.png" class="external">
+      </a>
+
+      <a href="#" class="list-item">
+        <div class="list-text">
+          <h3>Unregistered vehicle permits</h3>
+        </div>
+        <img src="tic.png" class="external">
+      </a>
+
+      <a href="#" class="list-item">
+        <div class="list-text">
+          <h3>My vehicle reports</h3>
+        </div>
+        <img src="tic.png" class="external">
+      </a>
+
+    </div>
+
+    <!-- bottom nav -->
+    <nav class="nav">
+      <a href="home.html">
+        <img src="home logo.png" class="nav-icon">
+        Home
+      </a>
+
+      <a href="vehicles-menu.html" class="active">
+        <img src="car logo.png" class="nav-icon">
+        Vehicles
+      </a>
+
+      <a href="index.html">
+        <img src="License logo.png" class="nav-icon">
+        Licence
+      </a>
+
+      <a href="payment.html">
+        <img src="payment logo.png" class="nav-icon">
+        Payments
+      </a>
+
+      <a href="profile.html">
+        <img src="profile logo.png" class="nav-icon">
+        Profile
+      </a>
+    </nav>
+
+  </div>
+</body>
+</html>

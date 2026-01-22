@@ -1,0 +1,398 @@
+/* GLOBAL STYLES */
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #111;
+}
+
+.back {
+  text-decoration: none;   /* removes underline */
+  color: #111;             /* or whatever color you want */
+  font-size: 24px;         /* makes the arrow bigger */
+  font-weight: bold;
+  display: inline-block;
+  padding: 4px 8px;
+}
+
+.back:active,
+.back:visited,
+.back:hover {
+  color: #111;             /* keeps color consistent on click, hover, visited */
+  text-decoration: none;
+}
+
+
+.app {
+  max-width: 430px;
+  margin: 0 auto;
+  background: #fff;
+
+  /* 🔑 FIXES Fullmode / iOS webview cropping */
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* HEADER */
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center all children */
+  position: relative;      /* needed for back button absolute positioning */
+  height: 56px;
+  padding: 0 16px;
+  border-bottom: 1px solid #eee;
+  padding-top: env(safe-area-inset-top);
+  height: calc(56px + env(safe-area-inset-top));
+}
+
+.top-header .title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.top-header .back {
+  position: absolute;      /* place back button independently on the left */
+  left: 16px;
+  font-size: 28px;
+}
+
+
+/* REFRESH */
+.refresh {
+  text-align: center;
+  font-size: 13px;
+  color: #8b8b8b;
+  padding: 10px 0;
+}
+
+/* LICENCE BAR */
+.licence-bar {
+  display: flex;
+  justify-content: space-between; /* text left, logo right */
+  align-items: center;            /* vertical center */
+  padding: 16px;
+  background: #d32f2f;
+  color: white;
+}
+
+.licence-text {
+  display: flex;
+  flex-direction: column;         /* stack title + subtitle */
+  justify-content: center;        /* vertical center in flex */
+}
+
+.licence-title {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.licence-sub {
+  font-size: 12px;
+  margin-top: 2px; /* slight spacing between lines */
+}
+
+.logo img {
+  height: 22px;                /* perfectly matches text height */
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* makes it white */
+}
+
+/* IMAGE SECTION */
+.image-section {
+  width: 100%;
+}
+
+.image-section img {
+  width: 100%;
+  display: block;
+}
+
+/* TABS */
+.segmented {
+  display: flex;          /* 👈 change from inline-flex */
+  width: fit-content;     /* keeps pill tight */
+  margin: 16px auto 0;    /* centers */
+  background: #ffffff;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+}
+
+.licence-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.segmented button {
+      border: none;
+      background: transparent;
+      padding: 5px 48px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #1f2937;
+      transition: all 0.2s ease;
+    }
+
+    .segmented button.active {
+      background: #1f3b63;
+      color: white;
+    }
+
+
+/* DETAILS */
+.details {
+  padding: 0 16px 24px;
+}
+
+.details h2 {
+  margin-bottom: 16px;
+  margin-top: 30px;
+}
+
+.row{
+  display:flex;
+  justify-content:flex-start; /* don't push to far right */
+  gap: 62px;                  /* controls how "middle" the right column is */
+  margin-bottom: 24px;
+}
+
+.row > div{
+  width: 150px;               /* makes both columns consistent */
+}
+
+
+.row span {
+  font-size: 12px;
+  color: #8b8b8b;
+}
+
+.row strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.badge {
+  display: inline-flex;             /* inline-block + flex centering */
+  align-items: center;              /* vertically center image */
+  justify-content: center;          /* horizontally center image */
+  background-color: #DE3424;        /* same red as Tailwind example */
+  padding: 2px 6px;                 /* approximate px-1.5 py-0.5 in Tailwind */
+  font-size: 0.75rem;               /* text-xs equivalent, fallback if image missing */
+  font-weight: 700;                  /* bold, for fallback text */
+  line-height: 1;                    /* centers content vertically */
+}
+
+.badge-image {
+  height: 0.75rem;                  /* matches text-xs (12px) */
+  width: auto;                       /* preserve aspect ratio */
+  display: block;
+}
+
+
+
+h3 {
+  margin-top: 28px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+}
+
+.single {
+  margin-bottom: 24px;
+}
+
+.single span {
+  font-size: 12px;
+  color: #8b8b8b;
+}
+
+.single strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.muted {
+  color: #8b8b8b;
+}
+
+.pill {
+  background: #e5e7eb;
+  color: #333;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 6px;
+}
+
+.barcode {
+  margin-top: 8px;
+  height: 48px;
+  background: repeating-linear-gradient(
+    90deg,
+    #000,
+    #000 2px,
+    #fff 2px,
+    #fff 4px
+  );
+  border-radius: 4px;
+}
+
+.divider {
+  height: 1px;
+  background: #d1d5db;
+  margin: 12px 0 16px;
+  border-radius: 1px;
+}
+
+/* GRID-2 STACKED */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr; /* single column */
+  gap: 16px;                  /* vertical spacing */
+}
+
+.cell span {
+  font-size: 12px;
+  color: #8b8b8b;
+}
+
+.cell strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.section-banner {
+  position: relative;
+  margin: 24px -16px 12px;       /* negative horizontal margin to stretch full width of container */
+  background-color: #E8EAF0;   /* light gray-blue background */
+  padding: 8px 16px;           /* vertical and horizontal padding */
+  border-radius: 4px;          /* optional: slightly rounded corners */
+}
+
+.section-banner h3 {
+  margin: 0;                   /* remove default margin */
+  font-size: 0.875rem;         /* text-sm in Tailwind (14px) */
+  font-weight: 600;             /* semibold */
+  color: #5B6B7C;              /* muted dark gray-blue text */
+}
+.signature-image {
+  width: auto;           /* do not stretch full width */
+  max-width: 200px;      /* adjust to desired width */
+  height: auto;          /* maintain aspect ratio */
+  display: block;
+  margin-top: 4px;       /* spacing below the label */
+  object-fit: contain;   /* keeps proportions */
+}
+
+.car-permit {
+  font-weight: 600;              /* semibold */
+  color: #111;                   /* dark text (similar to text-gray-900) */
+  display: flex;                 /* flex container to align text + badge */
+  align-items: center;           /* vertically center badge with text */
+  gap: 4px;                      /* space between text and badge */
+  margin: 0;                     /* remove default margin if needed */
+}
+
+.permit-badge {
+  display: inline-flex;          /* center contents inside badge */
+  align-items: center;
+  justify-content: center;
+  padding: 2px 1px;              /* px-1.5 py-0.5 equivalent */          /* slightly rounded corners */
+}
+
+.permit-icon {
+  width: 24px;                   /* roughly text-xs size */
+  height: 24px;
+  object-fit: contain;           /* maintain image proportions */
+  display: block;
+}
+
+.status-tick {
+  width: 24px;            /* adjust to match text height */
+  height: 24px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle; /* aligns tick with text baseline */
+  margin-right: 4px;      /* space between tick and "Current" */
+}
+
+.proficiency-logo {
+  width: 24px;             /* match text height */
+  height: 24px;            
+  object-fit: contain;     
+  display: inline-block;    
+  vertical-align: middle;  /* aligns image with text baseline */
+  margin-right: 4px;       /* spacing between logo and text */
+}
+
+.barcode-logo {
+    width: 400px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.card-number-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.eye-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.eye-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  opacity: 0.8;
+}
+
+.eye-btn:active .eye-icon {
+  opacity: 0.5;
+}
+
+.content,
+.details {
+  padding-bottom: calc(96px + env(safe-area-inset-bottom));
+}
+
+.qr-wrap{
+  position: relative;
+}
+
+.qr-hotspot{
+  position: absolute;
+
+  /* 👇 move these until it sits on top of the screenshot button */
+  left: 59%;
+  top: 66%;
+  width: 32%;
+  height: 14%;
+
+  background: transparent; /* invisible */
+  border: none;
+  cursor: pointer;
+
+  /* stops blue highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
+
+  /* hide text (but keeps accessibility) */
+  color: transparent;
+}

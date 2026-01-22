@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Demerit points</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background: #ffffff; color: #111; }
+
+    /* phone frame */
+    .app {
+      width: 390px;
+      height: 100vh;
+      margin: 0 auto;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* top header */
+    .top-header{
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-bottom: 1px solid #eee;
+      padding: 0 16px;
+    }
+    .top-header .title{
+      font-weight: 600;
+      font-size: 18px;
+    }
+    .top-header .back{
+      position: absolute;
+      left: 16px;
+      text-decoration: none;
+      color: #111;
+      font-size: 26px;
+      line-height: 1;
+      padding: 6px 8px;
+      border-radius: 10px;
+    }
+    .top-header .back:active{ background: rgba(0,0,0,0.06); }
+
+    /* page content */
+    .content{
+      padding: 18px 16px 24px;
+    }
+
+    /* green balance card */
+    .balance-card{
+      background: #49ad3a; /* close to screenshot */
+      border-radius: 14px;
+      padding: 18px;
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+      margin-bottom: 16px;
+    }
+    .balance-title{
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0.95;
+      margin-bottom: 10px;
+    }
+    .balance-row{
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .balance-big{
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .balance-outof{
+      font-size: 22px;
+      font-weight: 500;
+      opacity: 0.95;
+    }
+    .balance-sub{
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+
+    /* info cards */
+    .card{
+      background: #f2f4f7;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+    .card.white{
+      background: #fff;
+      border: 1px solid #e6e9ee;
+    }
+    .card-title{
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .card-text{
+      font-size: 14px;
+      line-height: 1.5;
+      color: #374151;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+
+    <header class="top-header">
+      <a class="back" href="home.html">‹</a>
+      <div class="title">Demerit points</div>
+    </header>
+
+    <div class="content">
+
+      <div class="balance-card">
+        <div class="balance-title">Current Balance</div>
+
+        <div class="balance-row">
+          <div class="balance-big">0</div>
+          <div class="balance-outof">/ 12</div>
+        </div>
+
+        <div class="balance-sub">demerit points</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Information</div>
+        <div class="card-text">
+          Demerit points are recorded against your licence when you commit certain driving offences.
+          If you accumulate too many points, your licence may be suspended.
+        </div>
+      </div>
+
+      <div class="card white">
+        <div class="card-title">Good driving record</div>
+        <div class="card-text">
+          You currently have 0 demerit points. Keep up the safe driving!
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

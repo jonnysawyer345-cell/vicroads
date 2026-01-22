@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Profile</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #f2f4f7;
+      color: #111;
+    }
+
+    .app {
+      width: 390px;
+      height: 100vh;
+      margin: 0 auto;
+      background: #f2f4f7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* HEADER */
+    .top-header {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .top-header .title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* CONTENT */
+    .content {
+      padding: 16px;
+      padding-bottom: 100px;
+    }
+
+    .section {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    .section-header {
+      padding: 16px;
+      font-size: 15px;
+      font-weight: 700;
+      border-bottom: 1px solid #eef0f3;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      text-decoration: none;
+      color: inherit;
+      font-size: 14px;
+    }
+
+    .item + .item {
+      border-top: 1px solid #eef0f3;
+    }
+
+    .item p {
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+
+    .chevron {
+      width: 18px;
+      height: 18px;
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    .item:active {
+      background: #f9fafb;
+    }
+
+    /* BOTTOM NAV */
+    .nav {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 80px;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #666;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .nav a.active {
+      color: #111;
+      font-weight: 600;
+    }
+
+    .nav-icon {
+      width: 26px;
+      height: 26px;
+      display: block;
+      margin: 0 auto 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+
+    <header class="top-header">
+      <div class="title">Profile</div>
+    </header>
+
+    <div class="content">
+
+      <div class="section">
+        <div class="section-header">Profile and settings</div>
+
+        <a href="#" class="item">
+          <span>Personal information</span>
+          <img src="tic.png" class="chevron">
+        </a>
+
+        <a href="#" class="item">
+          <span>Addresses</span>
+          <img src="tic.png" class="chevron">
+        </a>
+
+        <a href="#" class="item">
+          <span>Security settings</span>
+          <img src="tic.png" class="chevron">
+        </a>
+
+        <a href="#" class="item">
+          <span>Passkey settings</span>
+          <img src="tic.png" class="chevron">
+        </a>
+      </div>
+
+      <div class="section">
+        <div class="section-header">App controls</div>
+
+        <a href="#" class="item">
+          <div>
+            <strong>Biometrics and settings</strong>
+            <p>Enable biometrics and deactivate card or account</p>
+          </div>
+          <img src="tic.png" class="chevron">
+        </a>
+
+        <a href="#" class="item">
+          <span>Help and info</span>
+          <img src="tic.png" class="chevron">
+        </a>
+
+        <a href="#" class="item">
+          <span>Provide app feedback</span>
+          <img src="tic.png" class="chevron">
+        </a>
+      </div>
+
+    </div>
+
+    <!-- bottom nav -->
+    <nav class="nav">
+      <a href="home.html">
+        <img src="home logo.png" class="nav-icon">
+        Home
+      </a>
+
+      <a href="vehicles-menu.html">
+        <img src="car logo.png" class="nav-icon">
+        Vehicles
+      </a>
+
+      <a href="index.html">
+        <img src="License logo.png" class="nav-icon">
+        Licence
+      </a>
+
+      <a href="payment.html">
+        <img src="payment logo.png" class="nav-icon">
+        Payments
+      </a>
+
+      <a href="profile.html" class="active">
+        <img src="profile logo.png" class="nav-icon">
+        Profile
+      </a>
+    </nav>
+
+  </div>
+</body>
+</html>

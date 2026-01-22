@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Verify Licence</title>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    body{background:#fff;color:#111}
+
+    .app{max-width:430px;margin:0 auto;min-height:100vh;min-height:100dvh;background:#fff}
+
+    /* top bar */
+    .top{
+      height:56px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-bottom:1px solid #e5e7eb;
+      position:relative;
+      padding:0 16px;
+      background:#fff;
+    }
+    .top .title{font-size:16px;font-weight:600}
+    .close{
+      position:absolute;
+      right:16px;
+      top:50%;
+      transform:translateY(-50%);
+      text-decoration:none;
+      color:#111;
+      font-size:15px;
+      font-weight:500;
+      padding:6px 10px;
+      border-radius:10px;
+    }
+    .close:active{background:rgba(0,0,0,0.06)}
+
+    /* content */
+    .content{padding:18px 16px 28px}
+
+    .qr-wrap{
+      display:flex;
+      justify-content:center;
+      margin:8px 0 18px;
+    }
+    .qr{
+      width:min(340px, 92%);
+      aspect-ratio: 1 / 1;
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .qr img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .expires{
+      text-align:center;
+      font-size:18px;
+      font-weight:800;
+      margin:8px 0 18px;
+    }
+    .expires span{
+      font-weight:800;
+    }
+
+    .desc{
+      color:#4b5563;
+      font-size:13px;
+      line-height:1.5;
+      margin-bottom:18px;
+    }
+
+    .sharing-title{
+      font-size:13px;
+      font-weight:800;
+      margin:10px 0 10px;
+    }
+
+    ul{
+      padding-left:18px;
+      color:#374151;
+      font-size:13px;
+      line-height:1.6;
+    }
+    li{margin:6px 0}
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="title">Verify Licence</div>
+      <!-- change href back to whatever page has the Reveal button -->
+      <a class="close" href="#" id="closeBtn">Close</a>
+
+    </header>
+
+    <div class="content">
+      <div class="qr-wrap">
+        <div class="qr">
+          <!-- Replace with your QR image file -->
+          <img src="qr.png" alt="QR Code">
+        </div>
+      </div>
+
+      <div class="expires">
+        QR expires <span id="timer">01:57</span>
+      </div>
+
+      <div class="desc">
+        By presenting this QR code you consent to share some or all of your driver licence information,
+        including with scanners, venues and law enforcement agencies. They may retain your information
+        in accordance with their business practices and legal requirements.
+      </div>
+
+      <div class="sharing-title">You're sharing:</div>
+      <ul>
+        <li>Victorian driver licence photo</li>
+        <li>Full name, birth date and address</li>
+        <li>Licence number, type and expiry date</li>
+        <li>Licence status</li>
+        <li>Proficiency</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // simple countdown (starts at 1:57)
+    let seconds = 1 * 60 + 57;
+    const el = document.getElementById("timer");
+
+    function render() {
+      const m = String(Math.floor(seconds / 60)).padStart(2, "0");
+      const s = String(seconds % 60).padStart(2, "0");
+      el.textContent = `${m}:${s}`;
+    }
+
+    render();
+    setInterval(() => {
+      if (seconds > 0) seconds--;
+      render();
+    }, 1000);
+  const params = new URLSearchParams(window.location.search);
+  const from = params.get("from");
+
+  const closeBtn = document.getElementById("closeBtn");
+
+  if (from === "permit") {
+    closeBtn.href = "index.html";
+  } else if (from === "identity") {
+    closeBtn.href = "identity.html";
+  } else if (from === "age") {
+    closeBtn.href = "age.html";
+  } else {
+    // fallback
+    closeBtn.href = "index.html";
+  }
+  
+  </script>
+</body>
+</html>

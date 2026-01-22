@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>View details</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<link rel="stylesheet" href="styles.css" />
+
+<body>
+  <div class="app">
+
+    <header class="top-header">
+      <a href="home.html" class="back">‹</a>
+      <div class="title">View details</div>
+    </header>
+
+    <div class="refresh" id="lastRefreshed"></div>
+
+    <div class="licence-bar">
+      <div>
+        <div class="licence-title">PROBATIONARY DRIVER LICENCE</div>
+        <div class="licence-sub">Victoria Australia</div>
+      </div>
+      <div class="logo">
+        <img src="b7be7c363_image (1),.png" alt="Vicroads Logo" />
+      </div>
+    </div>
+
+   <div class="image-section qr-wrap">
+  <img src="IMG_1166.png" alt="Licence QR Section">
+
+  <!-- clickable area on top of the screenshot button -->
+  <button class="qr-hotspot" type="button" onclick="window.location.href='qr.html?from=identity'"></button>
+</div>
+
+
+    <div class="segmented">
+
+  <a href="index.html" class="segmented-link">
+    <button>Permit</button>
+  </a>
+
+  <a href="identity.html" class="segmented-link">
+    <button class="active">Identity</button>
+  </a>
+
+  <a href="age.html" class="segmented-link">
+    <button>Age</button>
+  </a>
+
+</div>
+
+
+    <div class="details">
+      <h2>JONATHAN F SAWYER</h2>
+
+      <div class="divider"></div>
+
+      <div class="single">
+        <span>Address</span>
+        <strong>109 LOWER DANDEONG RD</strong>
+        <strong>MENTONE VIC 3194</strong>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="single">
+        <span>Signature</span>
+        <img src="signature.png" alt="Driver Signature" class="signature-image" />
+      </div>
+    </div> <!-- ✅ close .details -->
+
+  </div> <!-- ✅ close .app -->
+
+  <script src="script.js"></script>
+</body>
+</html>

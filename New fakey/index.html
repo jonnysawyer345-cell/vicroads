@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>View details</title>
+
+  <!-- iOS-safe viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <header class="top-header">
+    <a href="home.html" class="back">‹</a>
+    <div class="title">View details</div>
+  </header>
+
+ <div class="refresh" id="lastRefreshed"></div>
+
+
+
+
+  <!-- RED LICENCE BAR -->
+  <div class="licence-bar">
+  <div>
+    <div class="licence-title">PROBATIONARY DRIVER LICENCE</div>
+    <div class="licence-sub">Victoria Australia</div>
+  </div>
+  <!-- Replace text with image -->
+  <div class="logo">
+    <img src="b7be7c363_image (1),.png" alt="Vicroads Logo" />
+  </div>
+</div>
+
+  <!-- IMAGE SECTION (REPLACES GREEN BACKGROUND) -->
+  <div class="image-section qr-wrap">
+  <img src="IMG_1166.png" alt="Licence QR Section">
+
+  <!-- clickable area on top of the screenshot button -->
+  <button class="qr-hotspot" onclick="window.location.href='qr.html?from=permit'">
+    Reveal QR code
+  </button>
+</div>
+
+
+ <div class="segmented">
+  <button class="active">Permit</button>
+
+  <a href="identity.html" class="segmented-link">
+    <button>Identity</button>
+  </a>
+
+  <a href="age.html" class="segmented-link">
+  <button>Age</button>
+  </a>
+</div>
+
+  <!-- DETAILS -->
+  <div class="details">
+
+  <h2>JONATHAN F SAWYER</h2>
+
+  <div class="divider"></div>
+
+
+  <!-- BASIC DETAILS -->
+  <div class="row">
+    <div>
+      <span>Permit number</span>
+      <strong>059463617</strong>
+    </div>
+    <div>
+      <span>Expiry</span>
+      <strong>12 Aug 2035</strong>
+    </div>
+  </div>
+
+    <div class="row">
+    <div>
+      <span>Permit type</span>
+    <p class="car-permit">
+  Car 
+  <span class="permit-badge">
+    <img src="pppp.png" alt="Permit Icon" class="permit-icon" />
+  </span>
+</p>
+
+
+
+    </div>
+    <div>
+      <span>Date of birth</span>
+      <strong>07 Aug 2007</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="single">
+    <span>Address</span>
+    <strong>109 LOWER DANDEONG RD</strong>
+    <strong>MENTONE VIC 3194</strong>
+  </div>
+
+<div class="divider"></div>
+
+
+  <div class="single">
+  <span>Signature</span>
+  <img src="signature.png" alt="Driver Signature" class="signature-image" />
+</div>
+
+
+  <!-- SECTION -->
+  <div class="section-banner">
+  <h3>Car learner permit details</h3>
+</div>
+
+
+<div class="grid-2">
+  <div class="cell">
+  <span>Permit status</span>
+  <strong>
+    <img src="Tick.png" alt="Tick" class="status-tick" />
+    Current
+  </strong>
+</div>
+
+
+  <div class="cell">
+  <span>Proficiency</span>
+  <strong>
+    <img src="ppp.png" alt="Permit Icon" class="proficiency-logo" />
+    Probationary
+  </strong>
+</div>
+
+  <div class="cell">
+    <span>Issue date</span>
+    <strong>12 Aug 2025</strong>
+  </div>
+
+  <div class="cell">
+    <span>Expiry</span>
+    <strong>12 Aug 2035</strong>
+  </div>
+</div>
+
+  <!-- SECTION -->
+   <div class="section-banner">
+    <h3>Other details</h3>
+   </div>
+
+<div class="cell">
+    <span>Conditions</span>
+    <strong>No conditions</strong>
+  </div>   
+  
+  <div class="divider"></div>
+
+  <div class="single card-number-row">
+  <span>Card number</span>
+
+  <div class="card-number-wrapper">
+    <strong id="cardNumber" data-real="P4999649">
+      ••••••••••••
+    </strong>
+
+    <button class="eye-btn" id="toggleEye" type="button">
+      <img
+        src="close.png"
+        class="eye-icon"
+        id="eyeIcon"
+        alt="Hide card number"
+      >
+    </button>
+  </div>
+</div>
+
+
+  <div class="divider"></div>
+
+  <div class="single">
+    <span>Victoria Police barcode</span>
+    <img src="barcode.png" class="barcode-logo"/>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

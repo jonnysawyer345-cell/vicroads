@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>View details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<link rel="stylesheet" href="styles.css" />
+
+<style>
+/* make the tab links not look like links */
+.segmented-link { text-decoration: none; }
+
+/* Age section */
+.age-label {
+  font-size: 12px;
+  color: #8b8b8b;
+  padding: 18px 16px 10px;
+}
+
+.age-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px 18px;
+}
+
+.age-check {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: #2fb344;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.age-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+}
+</style>
+
+<body>
+  <div class="app">
+
+    <!-- HEADER -->
+    <header class="top-header">
+      <a href="home.html" class="back">‹</a>
+      <div class="title">View details</div>
+    </header>
+
+    <!-- REFRESH -->
+    <div class="refresh" id="lastRefreshed">Last refreshed: —</div>
+
+    <!-- ✅ USE YOUR BANNER + PHOTO EXACTLY -->
+    <!-- RED LICENCE BAR -->
+    <div class="licence-bar">
+      <div>
+        <div class="licence-title">PROBATIONARY DRIVER LICENCE</div>
+        <div class="licence-sub">Victoria Australia</div>
+      </div>
+      <!-- Replace text with image -->
+      <div class="logo">
+        <img src="b7be7c363_image (1),.png" alt="Vicroads Logo" />
+      </div>
+    </div>
+
+    <!-- IMAGE SECTION (REPLACES GREEN BACKGROUND) -->
+   <div class="image-section qr-wrap">
+  <img src="IMG_1166.png" alt="Licence QR Section">
+
+  <!-- clickable area on top of the screenshot button -->
+  <button class="qr-hotspot" type="button"
+  onclick="window.location.href='qr.html?from=age'"></button>
+</div>
+
+    
+    <!-- TABS (Age active) -->
+    <div class="segmented">
+      <a href="index.html" class="segmented-link">
+        <button type="button">Permit</button>
+      </a>
+
+      <a href="identity.html" class="segmented-link">
+        <button type="button">Identity</button>
+      </a>
+
+      <a href="age.html" class="segmented-link">
+        <button type="button" class="active">Age</button>
+      </a>
+    </div>
+
+    <!-- AGE CONTENT -->
+    <div class="details">
+      <div class="age-label">Age status</div>
+
+      <div class="age-row">
+        <div class="age-check">✓</div>
+        <div class="age-value">Over 18</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JS: auto-update refresh -->
+  <script>
+    const refreshEl = document.getElementById("lastRefreshed");
+    if (refreshEl) {
+      const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+      const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+      const now = new Date();
+
+      refreshEl.textContent =
+        `Last refreshed: ${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}, ` +
+        `${String(now.getHours()).padStart(2,"0")}:${String(now.getMinutes()).padStart(2,"0")}`;
+    }
+  </script>
+</body>
+</html>
+
